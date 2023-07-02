@@ -1,4 +1,4 @@
-# mach-direct3d-x86_64 - updated DirectX headers for MinGW/Zig
+# direct3d-headers - updated DirectX headers for Zig
 
 This repository provides some updated `include/` and `x86_64/` libraries for Zig/MinGW that enable the use of the latest Direct3D functionality.
 
