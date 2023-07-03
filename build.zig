@@ -10,7 +10,11 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    if (lib.target.toTarget().cpu.arch == .x86_64) lib.addLibraryPath("x86_64");
+    if (lib.target.toTarget().cpu.arch == .x86_64) {
+        lib.addLibraryPath("x86_64");
+        lib.linkSystemLibraryName("dxguid");
+        lib.linkSystemLibraryName("dxgi");
+    }
     b.installArtifact(lib);
 
     lib.installHeadersDirectory("include", ".");
