@@ -37,3 +37,7 @@ cp /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_
 
 * `include/` contains files generated from the [microsoft/win32metadata](https://github.com/microsoft/win32metadata/tree/master/generation/WinSDK/RecompiledIdlHeaders) repository, which are [not open source](https://github.com/microsoft/win32metadata/issues/766). The files are fed through Wine's WIDL header generator, which produces new files (arguably we are allowed to MIT license the result, but you may want to presume they are proprietary.)
 * `x86_64/` is licensed under the MinGW-w64-runtime licenses, a copy of which is provided in `COPYING.MinGW-w64-runtime.txt`
+
+## Issues
+
+Issues are tracked in the [main Mach repository](https://github.com/hexops/mach/issues?q=is%3Aissue+is%3Aopen+label%3Adirect3d-headers).
