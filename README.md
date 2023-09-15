@@ -26,11 +26,14 @@ cp win32metadata/generation/WinSDK/RecompiledIdlHeaders/shared/rpcndr.h include/
 
 ## Libraries
 
-`x86_64/` contains runtime libraries from the MinGW-w64 project, namely:
+`x86_64/` contains runtime libraries from the MinGW-w64 project, namely this release:
 
-```sh
-cp /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/lib/libdxgi.a x86_64/dxgi.lib
-cp /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/lib/libdxguid.a x86_64/dxguid.lib
+* https://github.com/niXman/mingw-builds-binaries/releases/tag/13.1.0-rt_v11-rev1
+* `x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1.7z`
+
+```
+cp ~/Downloads/mingw64/x86_64-w64-mingw32/lib/libdxgi.a ./x86_64
+cp ~/Downloads/mingw64/x86_64-w64-mingw32/lib/libdxguid.a ./x86_64
 ```
 
 ## LICENSE
