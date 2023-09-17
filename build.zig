@@ -8,6 +8,7 @@ pub fn build(b: *std.Build) void {
         .name = "direct3d-headers",
         .target = target,
         .optimize = optimize,
+        .root_source_file = .{ .path = "stub.c" },
     });
     if (lib.target.toTarget().cpu.arch == .x86_64) {
         lib.addLibraryPath(.{ .path = "x86_64" });
