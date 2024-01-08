@@ -8,12 +8,12 @@ pub fn build(b: *std.Build) void {
         .name = "direct3d-headers",
         .target = target,
         .optimize = optimize,
-        .root_source_file = .{ .path = b.addWriteFiles().add("empty.c", "") },
+        .root_source_file = b.addWriteFiles().add("empty.c", ""),
     });
-    if (lib.target.toTarget().cpu.arch == .x86_64) {
+    if (target.result.cpu.arch == .x86_64) {
         lib.addLibraryPath(.{ .path = "x86_64" });
-        lib.linkSystemLibraryName("dxguid");
-        lib.linkSystemLibraryName("dxgi");
+        lib.linkSystemLibrary("dxguid");
+        lib.linkSystemLibrary("dxgi");
     }
     b.installArtifact(lib);
 
