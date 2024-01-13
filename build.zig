@@ -22,7 +22,7 @@ pub fn build(b: *std.Build) void {
 
 // TODO(build-system): this is needed because lib2.linkLibrary(lib)
 // will not add the library path transitively to lib3.linkLibrary(lib2)
-pub fn addLibraryPath(step: *std.build.CompileStep) void {
+pub fn addLibraryPath(step: *std.Build.Step.Compile) void {
     step.addLibraryPath(.{ .path = sdkPath("/x86_64") });
 }
 
