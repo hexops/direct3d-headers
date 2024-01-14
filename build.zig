@@ -26,6 +26,10 @@ pub fn addLibraryPath(step: *std.Build.Step.Compile) void {
     step.addLibraryPath(.{ .path = sdkPath("/x86_64") });
 }
 
+pub fn addLibraryPathToModule(module: *std.Build.Module) void {
+    module.addLibraryPath(.{ .path = sdkPath("/x86_64") });
+}
+
 fn sdkPath(comptime suffix: []const u8) []const u8 {
     if (suffix[0] != '/') @compileError("suffix must be an absolute path");
     return comptime blk: {
