@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
         .root_source_file = b.addWriteFiles().add("empty.c", ""),
     });
-    if (target.result.cpu.arch == .x86_64) {
+    if (target.result.cpu.arch == .x86_64 and target.result.os.tag == .windows) {
         lib.addLibraryPath(.{ .path = "x86_64" });
         lib.linkSystemLibrary("dxguid");
         lib.linkSystemLibrary("dxgi");
